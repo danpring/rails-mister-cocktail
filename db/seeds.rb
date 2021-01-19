@@ -26,7 +26,7 @@ puts "Creating ingredients..."
 file = HTTParty.get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
 ingredients_hash = JSON.parse(file.body)
 
-99.times do
+10.times do
   Ingredient.create(name: ingredients_hash["drinks"].sample["strIngredient1"])
 end
 
