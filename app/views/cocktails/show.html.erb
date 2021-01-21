@@ -3,5 +3,11 @@
   <%= f.input :name %>
   <%= f.submit class: 'btn btn-primary' %>
   <% end %>
-  <div class="btn btn-success"><%= link_to "Cocktail List", cocktails_path%></div>
+
+<div class="row">
+<div class="col"><button class="btn btn-success"><%= link_to "Cocktail List", cocktails_path%></button></div><div class="w-100"></div>
+<div class="col"><button class="btn btn-success"> <%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail)%></button></div><div class="w-100"></div>
+<div class="col"><button class="btn btn-danger"> <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: {confirm: 'Are you sure?'}%></button></div>
+</div>
+
 </div>

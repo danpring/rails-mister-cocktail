@@ -12,7 +12,7 @@ Cocktail.destroy_all
 
 puts "Creating cocktails..."
 
-5.times do
+10.times do
   Cocktail.create(name: "#{Faker::Hipster.word} #{Faker::Hipster.word}")
 end
 

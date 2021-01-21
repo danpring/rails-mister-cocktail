@@ -1,7 +1,23 @@
+<div class="container">
+
 <h1>All the cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-<p><%= link_to cocktail.name, cocktail_path(cocktail) %>
-<%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: {confirm: 'Are you sure?'}  %></p>
-<% end %>
 
 <button class="btn btn-success"> <%= link_to 'New', new_cocktail_path%></button>
+
+<div class="row row-cols-md-3 g-4">
+<% @cocktails.each do |cocktail| %>
+<div class="col">
+<div class="card h-100" style="width: 18rem;">
+<div><%= cl_image_tag("dlq4s3dzpyywwd1gbd3o", :class => "card-img-top") %> </div>
+<div class="card-body">
+<h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+<p class="card-text">Click the cocktail name to see more detail!</p>
+<button class="btn btn-success"><%= link_to 'Delete', cocktail_path(cocktail), method: :delete, data: {confirm: 'Are you sure?'}  %></button>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+
+
